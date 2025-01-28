@@ -14,6 +14,7 @@ You can install this software directly from GitHub:
 
 ```bash
 pip install git+https://github.com/sshanshans/GBEGE.git
+```
 
 ## Usage
 
