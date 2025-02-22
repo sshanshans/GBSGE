@@ -1,6 +1,6 @@
 # GBSGE
 
-This repository contains software for approximating the Gaussian expectation problems using GBS-I, GBS-P, and MC methods. 
+This repository contains python code for approximating the Gaussian expectation problems using GBS-I, GBS-P, and MC methods. 
 
 ## Features
 
