@@ -10,10 +10,9 @@ This repository contains python code for approximating the Gaussian expectation 
 
 ## Installation
 
-You can install this software directly from GitHub:
-
 ```bash
-pip install git+https://github.com/sshanshans/GBEGE.git
+git clone https://github.com/sshanshans/GBEGE.git
+pip install -e ./
 ```
 
 ## Usage
