@@ -6,7 +6,7 @@ This repository contains software for approximating the Gaussian expectation pro
 
 - Generate Gaussian expectation problems.
 - Simulate and compare GBS-I, GBS-P, and MC methods.
-- Create figures and tables in [paper].
+- Create figures and tables in the companion paper.
 
 ## Installation
 
