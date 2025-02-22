@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='GBSGE',
     version='0.1.0',
-    description='Use Gaussian Boson Sampling for Approximate Gaussian Expectation Problems',
+    description='Using Gaussian Boson Samplers for Approximate Gaussian Expectation Problems',
     url='https://github.com/sshanshans/GBEGE.git',
     author='Shan Shan',
     author_email='shan-qm@imada.sdu.dk',

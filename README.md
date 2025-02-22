@@ -53,26 +53,9 @@ This software is licensed under the GPL-3.0 License. See the LICENSE file for de
 ## Citations
 If you use this software in your research, please cite the associated paper:
 
-**[Paper Title]**  
-[Author Name(s)]  [Year].  
-ArXiv: [ArXiv Link] (if applicable)
+**Using Gaussian Boson Samplers for Approximate Gaussian Expectation Problems**  
+Jørgen Ellegaard Andersen, Shan Shan (2025)
 
-BibTeX entry:
-```bibtex
-@article{YourCitationKey,
-  author    = {Author Name(s)},
-  title     = {Paper Title},
-  journal   = {Journal/Conference Name},
-  year      = {Year},
-  volume    = {Volume (if applicable)},
-  number    = {Issue (if applicable)},
-  pages     = {Page range (if applicable)},
-  doi       = {DOI Link},
-  url       = {URL Link (optional)},
-  archivePrefix = {arXiv},
-  eprint    = {ArXiv ID (if applicable)},
-}
-```
 
 ## Contributions
 Contributions are welcome! Please submit a pull request or open an issue if you encounter bugs or have suggestions.
