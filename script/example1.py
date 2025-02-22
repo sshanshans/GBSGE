@@ -47,6 +47,9 @@ def compute_c1_geom(z, K):
 def compute_c2_geom(z, K):
     return 1 + 1/np.sqrt(np.pi) * geometric_series_sum(z, K)
 
+def compute_c1_geom_inf(z):
+    return 1 + 1/np.sqrt(np.pi) * np.exp(1/25 - 1/6) * geometric_series_sum(z, float('inf'))
+
 def compute_mc_geom(z, K):
     """
     Computes 1 + exp(1/25 - 1/6) * R_{1/2, K}(z)
@@ -55,7 +58,7 @@ def compute_mc_geom(z, K):
 
 def compute_gbs_finite(z, K):
     """
-    Computes for N = 3, 2q_alpha = 1
+    Computes for N = 3, 2q_beta = 1
     """
     sk = int(np.ceil(2*K / 3))
     H = 1/2 * z**2
@@ -65,7 +68,7 @@ def compute_gbs_finite(z, K):
     
 def compute_gbs_infinite(z):
     """
-    Computes for N = 3, 2q_alpha = 1
+    Computes for N = 3, 2q_beta = 1
     """
     H = 1/2 * z**2
     p1 = 2 * np.pi * np.sqrt(3) * np.exp(3/13) * geometric_series_sum(2*z/3, 3)
@@ -78,13 +81,13 @@ def generate_latex_table():
     \\centering
     \\begin{tabular}{|c|c|c|c|}
     \\hline
-    $K$ & $\\mu_{\\text{haf}}$ & $\\text{MC}$ & $\\text{GBS}$ \\\\ 
+    $K$ & $\\mu_{\\text{hafsq}}$ & $\\text{GBS}$ & $\\text{MC}$ \\\\ 
     \\hline"""
 
     # Footer for the LaTeX table
     table_footer = """\\hline
     \\end{tabular}
-    \\caption{Comparison of $\\mu_{\\text{haf}}$, MC, and GBS for different $K$.}
+    \\caption{Comparison of $\\mu_{\\text{hafsq}}$, MC, and GBS for different $K$.}
     \\label{tab:comparison}
     \\end{table}"""
 
@@ -106,6 +109,9 @@ def generate_latex_table():
 
     gamma_beta = 0.96 * N / bmax
     gamma_alpha = gamma_beta
+
+    print('asym MC factor', 4 * gamma_alpha * bmin * bmin / (gamma_beta * bmax * bmax)**2)
+    print('upper bound of UGBS', compute_gbs_infinite(gamma_beta * bmax)/ T.B.d /compute_c1_geom_inf(gamma_alpha * bmin * bmin))
 
     for K in range(1, 11):
         K = K * 5
@@ -129,13 +135,13 @@ def generate_latex_table():
         gbs_formatted = f"{g / c1**2 / T.B.d:.4e}"
 
         # Append formatted row to table content
-        table_content.append(rf"{K}&{mu_haf_formatted}&{mc_formatted} & {gbs_formatted} \\\\")
+        table_content.append(rf"{K}&{mu_haf_formatted} & {gbs_formatted} & {mc_formatted} \\")
 
     # Combine header, content, and footer
     latex_table = "\n".join([table_header] + table_content + [table_footer])
 
     # Save LaTeX table to file
-    with open("table_hafsq.tex", "w") as f:
+    with open("../rslt/example1.tex", "w") as f:
         f.write(latex_table)
 
     print("LaTeX table has been saved to table.tex.")

@@ -64,7 +64,7 @@ def generate_latex_table():
     \\centering
     \\begin{tabular}{|c|c|c|c|}
     \\hline
-    $K$ & $\\mu_{\\text{haf}}$ & $\\text{MC}$ & $\\text{GBS}$ \\\\ 
+    $K$ & $\\mu_{\\text{haf}}$ & $\\text{GBS}$ & $\\text{MC}$ \\\\ 
     \\hline"""
 
     # Footer for the LaTeX table
@@ -115,13 +115,13 @@ def generate_latex_table():
         gbs_formatted = f"{g / c1**2 / T.B.d:.4e}"
 
         # Append formatted row to table content
-        table_content.append(rf"{K}&{mu_haf_formatted}&{mc_formatted} & {gbs_formatted} \\\\")
+        table_content.append(rf"{K}&{mu_haf_formatted} & {gbs_formatted} &{mc_formatted} \\")
 
     # Combine header, content, and footer
     latex_table = "\n".join([table_header] + table_content + [table_footer])
 
     # Save LaTeX table to file
-    with open("table_haf.tex", "w") as f:
+    with open("../rslt/example3.tex", "w") as f:
         f.write(latex_table)
 
     print("LaTeX table has been saved to table.tex.")
