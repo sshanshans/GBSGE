@@ -11,7 +11,7 @@ This repository contains python code for approximating the Gaussian expectation 
 ## Installation
 
 ```bash
-git clone https://github.com/sshanshans/GBEGE.git
+git clone https://github.com/sshanshans/GBSGE.git
 pip install -e ./
 ```
 
